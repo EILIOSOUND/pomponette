@@ -1,3 +1,4 @@
+import ScrollToTop from "./components/ScrollToTop";
 import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from './router';
 import Navbar from '@/components/feature/Navbar';
@@ -8,6 +9,7 @@ import CookieBanner from '@/components/feature/CookieBanner';
 export default function App() {
   return (
     <BrowserRouter basename={__BASE_PATH__}>
+      <ScrollToTop />
       <AgeVerification />
       <CookieBanner />
       <Navbar />
