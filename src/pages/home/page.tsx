@@ -80,7 +80,7 @@ export default function HomePage() {
                     {article.excerpt}
                   </p>
                   <Link
-                    to="/guide-conseils"
+                    to={`/guide/${article.slug}`}
                     className="inline-flex items-center gap-1.5 font-inter text-[11px] tracking-widest text-gold uppercase transition-all duration-300 hover:gap-2.5 cursor-pointer"
                   >
                     Lire la suite

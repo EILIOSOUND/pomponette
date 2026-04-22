@@ -13,7 +13,7 @@ export default function PourEllePage() {
       {/* Hero */}
       <section className="relative h-64 md:h-80 overflow-hidden">
         <img
-          src="https://readdy.ai/api/search-image?query=elegant%20feminine%20boudoir%20pink%20roses%20silk%20fabric%20soft%20candlelight%20luxury%20intimate%20atmosphere%20non%20explicit%20artistic%20wide%20banner&width=1440&height=400&seq=elle-hero&orientation=landscape"
+          src="/images/723de039b442d9c98921105a49644b9d.jpg"
           alt="Pour Elle"
           className="h-full w-full object-cover object-top"
         />
@@ -63,7 +63,7 @@ export default function PourEllePage() {
           </div>
 
           <p className="mt-12 text-center font-inter text-[11px] text-black/35">
-            * En tant que partenaire affilié Lovehoney via Webgains, nous percevons une commission sur les ventes réalisées via nos liens.{' '}
+            * En tant que partenaire affilié Espace Plaisir via Kwanko, nous percevons une commission sur les ventes réalisées via nos liens.{' '}
             <a href="/divulgation-affiliation" className="text-gold underline hover:text-gold/70">En savoir plus</a>
           </p>
         </div>

@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+
+const COOKIE_KEY = 'pomponette_cookie_consent';
 
 const NEWSLETTER_URL = 'https://readdy.ai/api/form/d7bd5c8mqd64j87imjc0';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleManageCookies = useCallback(() => {
+    localStorage.removeItem(COOKIE_KEY);
+    window.dispatchEvent(new Event('pomponette_reset_cookies'));
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +44,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-5 flex items-center gap-2.5">
               <img
-                src="https://storage.readdy-site.link/project_files/03c08238-6c7d-4d06-8529-e8bd18a2251a/b2c75794-4f3f-4caf-bf90-4236446fa8ef_pomponette_logo.png?v=acc7d23ba030e8d746eff9a6bbd1e295"
+                src="https://storage.readdy-site.link/project_files/03c08238-6c7d-4d06-8529-e8bd18a2251a/44a885d9-4740-4a9e-a62d-f0c390c97596_pomponette_logo2.png?v=9d5af8ddca74dabf7b373490880c1a9e"
                 alt="Pomponette"
                 className="h-9 w-auto"
               />
@@ -137,6 +144,15 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={handleManageCookies}
+                  className="font-inter text-[13px] text-cream/35 transition-colors duration-200 hover:text-gold/70 cursor-pointer"
+                >
+                  Gérer mes cookies
+                </button>
+              </li>
             </ul>
 
             {/* Mini newsletter */}

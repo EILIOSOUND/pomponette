@@ -12,7 +12,7 @@ const items = [
   {
     icon: 'ri-links-line',
     title: 'Partenaires Reconnus',
-    desc: 'Nous collaborons exclusivement avec Lovehoney, leader mondial du bien-être intime depuis 20 ans.',
+    desc: 'Nous collaborons exclusivement avec Espace Plaisir, référence française du bien-être intime.',
   },
 ];
 

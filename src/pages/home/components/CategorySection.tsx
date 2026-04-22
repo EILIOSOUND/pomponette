@@ -5,19 +5,19 @@ const categories = [
     title: 'Pour Elle',
     description: 'Une sélection raffinée de produits pensés pour le plaisir et le bien-être féminin.',
     href: '/pour-elle',
-    image: 'https://readdy.ai/api/search-image?query=elegant%20feminine%20wellness%20boudoir%20pink%20roses%20silk%20fabric%20soft%20candlelight%20luxury%20intimate%20atmosphere%20non%20explicit%20artistic&width=500&height=650&seq=cat1&orientation=portrait',
+    image: '/images/c3d84e0f8aa397e73a4ae0fc7d24065b.jpg',
   },
   {
     title: 'Pour Lui',
     description: 'Des produits soigneusement sélectionnés pour explorer et enrichir le bien-être masculin.',
     href: '/pour-lui',
-    image: 'https://readdy.ai/api/search-image?query=elegant%20masculine%20dark%20moody%20atmosphere%20black%20marble%20whiskey%20glass%20luxury%20intimate%20wellness%20non%20explicit%20artistic%20photography&width=500&height=650&seq=cat2&orientation=portrait',
+    image: '/images/de9004fd0f9648a1cfa3f8bdbb63c5bb.jpg',
   },
   {
     title: 'À Deux',
     description: 'Renforcez votre complicité avec des produits conçus pour les moments partagés.',
     href: '/a-deux',
-    image: 'https://readdy.ai/api/search-image?query=romantic%20couple%20intimacy%20candles%20rose%20petals%20elegant%20bedroom%20warm%20soft%20light%20luxury%20lifestyle%20non%20explicit%20artistic%20photography&width=500&height=650&seq=cat3&orientation=portrait',
+    image: '/images/d06aaeabadbeb0b141b821fa6ae08205.jpg',
   },
 ];
 

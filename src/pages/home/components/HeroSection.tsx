@@ -6,7 +6,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="https://readdy.ai/api/search-image?query=elegant%20intimate%20boudoir%20atmosphere%20soft%20candlelight%20silk%20fabric%20rose%20petals%20luxury%20dark%20moody%20photography%20artistic%20sensual%20non%20explicit%20warm%20tones%20black%20background&width=1440&height=900&seq=hero1&orientation=landscape"
+          src="/images/f9ad96852406563374ecd695abe0adc3.jpg"
           alt="Pomponette hero"
           className="h-full w-full object-cover object-top"
         />

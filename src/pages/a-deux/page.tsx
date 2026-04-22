@@ -12,7 +12,7 @@ export default function ADeuxPage() {
     <main className="pt-20">
       <section className="relative h-64 md:h-80 overflow-hidden">
         <img
-          src="https://readdy.ai/api/search-image?query=romantic%20couple%20intimacy%20candles%20rose%20petals%20elegant%20bedroom%20warm%20soft%20light%20luxury%20lifestyle%20non%20explicit%20artistic%20wide%20banner&width=1440&height=400&seq=deux-hero&orientation=landscape"
+          src="/images/1b29687a55b18b0e31a956981e1a6fac.jpg"
           alt="À Deux"
           className="h-full w-full object-cover object-top"
         />
@@ -60,7 +60,7 @@ export default function ADeuxPage() {
           </div>
 
           <p className="mt-12 text-center font-inter text-[11px] text-black/35">
-            * En tant que partenaire affilié Lovehoney via Webgains, nous percevons une commission sur les ventes réalisées via nos liens.{' '}
+            * En tant que partenaire affilié Espace Plaisir via Kwanko, nous percevons une commission sur les ventes réalisées via nos liens.{' '}
             <a href="/divulgation-affiliation" className="text-gold underline hover:text-gold/70">En savoir plus</a>
           </p>
         </div>

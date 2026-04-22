@@ -17,7 +17,7 @@ export const articles: Article[] = [
     excerpt: 'Découvrez comment une communication ouverte et bienveillante peut transformer votre vie intime et renforcer les liens au sein de votre couple.',
     category: 'Couple',
     readTime: '5 min',
-    image: 'https://readdy.ai/api/search-image?query=couple%20talking%20intimately%20soft%20candlelight%20elegant%20bedroom%20warm%20tones%20romantic%20atmosphere%20photography%20lifestyle&width=600&height=400&seq=a1&orientation=landscape',
+    image: '/images/432f1f5dbabe6e084849064799d08607.jpg',
     date: '15 mars 2026',
   },
   {
@@ -27,7 +27,7 @@ export const articles: Article[] = [
     excerpt: 'Un guide doux et bienveillant pour comprendre et célébrer son corps, avec des conseils pratiques pour un bien-être intime au quotidien.',
     category: 'Pour Elle',
     readTime: '7 min',
-    image: 'https://readdy.ai/api/search-image?query=woman%20self%20care%20routine%20elegant%20bathroom%20flowers%20candles%20soft%20light%20wellness%20lifestyle%20photography%20warm%20tones&width=600&height=400&seq=a2&orientation=landscape',
+    image: '/images/82535a5491b132b1903057f00b194be9.jpg',
     date: '8 mars 2026',
   },
   {
@@ -37,7 +37,7 @@ export const articles: Article[] = [
     excerpt: 'Conseils pratiques et bienveillants pour faire le bon choix parmi les nombreuses options disponibles, selon vos envies et votre sensibilité.',
     category: 'Guide',
     readTime: '6 min',
-    image: 'https://readdy.ai/api/search-image?query=elegant%20intimate%20wellness%20products%20arranged%20on%20cream%20marble%20surface%20with%20flowers%20luxury%20lifestyle%20photography%20soft%20light&width=600&height=400&seq=a3&orientation=landscape',
+    image: '/images/399a8b51bba0340ddbe598fbcf20c2f6.jpg',
     date: '1 mars 2026',
   },
   {
@@ -47,7 +47,7 @@ export const articles: Article[] = [
     excerpt: 'Le massage est un langage universel de tendresse. Apprenez les techniques de base pour offrir et recevoir un massage sensuel mémorable.',
     category: 'Couple',
     readTime: '8 min',
-    image: 'https://readdy.ai/api/search-image?query=couple%20massage%20candles%20rose%20petals%20elegant%20bedroom%20warm%20soft%20light%20romantic%20wellness%20lifestyle%20photography&width=600&height=400&seq=a4&orientation=landscape',
+    image: '/images/e5997909be987417ef6683a7a4b29f8d.jpg',
     date: '22 février 2026',
   },
   {
@@ -57,7 +57,7 @@ export const articles: Article[] = [
     excerpt: 'La confiance en soi est le fondement d\'une vie intime épanouie. Explorez des pistes concrètes pour cultiver cette confiance au quotidien.',
     category: 'Bien-être',
     readTime: '5 min',
-    image: 'https://readdy.ai/api/search-image?query=confident%20woman%20elegant%20mirror%20reflection%20soft%20light%20bedroom%20empowerment%20wellness%20lifestyle%20photography%20warm%20tones&width=600&height=400&seq=a5&orientation=landscape',
+    image: '/images/4abb75e29dce15d850dfe8cc7dd1b1b9.jpg',
     date: '14 février 2026',
   },
   {
@@ -67,7 +67,7 @@ export const articles: Article[] = [
     excerpt: 'Tout ce que vous devez savoir sur les lubrifiants intimes : types, compositions, usages et conseils pour choisir celui qui vous convient.',
     category: 'Guide',
     readTime: '6 min',
-    image: 'https://readdy.ai/api/search-image?query=luxury%20intimate%20wellness%20products%20bottles%20elegant%20cream%20background%20soft%20light%20product%20photography%20minimalist%20clean&width=600&height=400&seq=a6&orientation=landscape',
+    image: '/images/8b25f4c8c9e361ca530285edf3070bce.jpg',
     date: '5 février 2026',
   },
 ];

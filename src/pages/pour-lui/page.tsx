@@ -12,7 +12,7 @@ export default function PourLuiPage() {
     <main className="pt-20">
       <section className="relative h-64 md:h-80 overflow-hidden">
         <img
-          src="https://readdy.ai/api/search-image?query=elegant%20masculine%20dark%20moody%20black%20marble%20luxury%20intimate%20wellness%20atmosphere%20non%20explicit%20artistic%20wide%20banner%20photography&width=1440&height=400&seq=lui-hero&orientation=landscape"
+          src="/images/7c8ff9b0daaec68ded675bb69b855749.jpg"
           alt="Pour Lui"
           className="h-full w-full object-cover object-top"
         />
@@ -60,7 +60,7 @@ export default function PourLuiPage() {
           </div>
 
           <p className="mt-12 text-center font-inter text-[11px] text-black/35">
-            * En tant que partenaire affilié Lovehoney via Webgains, nous percevons une commission sur les ventes réalisées via nos liens.{' '}
+            * En tant que partenaire affilié Espace Plaisir via Kwanko, nous percevons une commission sur les ventes réalisées via nos liens.{' '}
             <a href="/divulgation-affiliation" className="text-gold underline hover:text-gold/70">En savoir plus</a>
           </p>
         </div>

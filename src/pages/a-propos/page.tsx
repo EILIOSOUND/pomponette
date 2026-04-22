@@ -12,17 +12,27 @@ export default function AProposPage() {
           <div className="mb-10">
             <div className="mb-4 h-px w-16 bg-gold/40" />
             <h2 className="mb-6 font-playfair text-3xl font-semibold text-black">L&apos;histoire de Pomponette</h2>
-            <p className="mb-4 font-inter text-sm leading-relaxed text-dark-gray">
-              Pomponette est née d&apos;une conviction simple : le bien-être intime mérite la même attention, la même élégance et la même bienveillance que tout autre aspect de notre santé et de notre bonheur.
+            <p className="mb-5 font-playfair text-lg italic leading-relaxed text-black/70">
+              Et si votre bien-être intime devenait enfin une évidence, sans gêne ni compromis ?
             </p>
             <p className="mb-4 font-inter text-sm leading-relaxed text-dark-gray">
-              Dans un monde où la sexualité est encore trop souvent abordée avec maladresse ou vulgarité, nous avons voulu créer un espace différent — raffiné, rassurant, et profondément humain. Un endroit où chacun peut explorer, découvrir et s&apos;épanouir en toute sérénité.
+              Pomponette est née d&apos;une conviction simple : le plaisir et l&apos;intimité méritent la même attention, la même élégance et la même bienveillance que tous les autres aspects de votre vie.
             </p>
             <p className="mb-4 font-inter text-sm leading-relaxed text-dark-gray">
-              Notre sélection est pensée avec soin : chaque produit est choisi pour sa qualité, sa sécurité et son élégance. Nous travaillons en partenariat avec Lovehoney, leader mondial du bien-être intime, pour vous proposer ce qu&apos;il se fait de mieux.
+              Dans un monde où la sexualité est encore trop souvent abordée avec maladresse ou vulgarité, nous avons choisi une autre voie.
+              Un espace raffiné, rassurant, pensé pour vous — où vous pouvez explorer, découvrir et vous épanouir en toute sérénité.
             </p>
-            <p className="font-inter text-sm leading-relaxed text-dark-gray">
-              Pomponette, c&apos;est <strong>le petit secret qui change tout</strong> — pour elle, pour lui, pour vous deux.
+            <p className="mb-4 font-inter text-sm leading-relaxed text-dark-gray">
+              Chaque produit est sélectionné avec exigence : qualité, sécurité, design.
+              Rien n&apos;est laissé au hasard.
+              Parce que vous méritez ce qu&apos;il se fait de mieux, nous collaborons avec Espace Plaisir, référence française du bien-être intime.
+            </p>
+            <p className="mb-4 font-inter text-sm leading-relaxed text-dark-gray">
+              Pomponette, c&apos;est plus qu&apos;une sélection.
+              C&apos;est une invitation à vous reconnecter à vous-même, à votre plaisir, et à ce qui vous fait du bien.
+            </p>
+            <p className="font-inter text-sm font-medium leading-relaxed text-black">
+              Le petit secret qui change tout — pour elle, pour lui, pour vous deux.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">

@@ -67,7 +67,7 @@ export default function ContactPage() {
             </form>
           )}
           <div className="mt-8 text-center">
-            <p className="font-inter text-xs text-dark-gray/50">Ou écrivez-nous directement à <a href="mailto:xheinintime@gmail.com" className="text-gold underline">xheinintime@gmail.com</a></p>
+            <p className="font-inter text-xs text-dark-gray/50">Ou écrivez-nous directement à <a href="mailto:shop.pomponette@gmail.com" className="text-gold underline">shop.pomponette@gmail.com</a></p>
           </div>
         </div>
       </section>

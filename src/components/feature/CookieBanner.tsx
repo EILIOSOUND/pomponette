@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 
 const COOKIE_KEY = 'pomponette_cookie_consent';
 
+function saveConsent(analytics: boolean, marketing: boolean) {
+  localStorage.setItem(COOKIE_KEY, JSON.stringify({ analytics, marketing }));
+  // Notifie les autres composants (ex: useConsent hook)
+  window.dispatchEvent(new Event('pomponette_consent_updated'));
+}
+
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
   const [showCustomize, setShowCustomize] = useState(false);
@@ -16,18 +22,29 @@ export default function CookieBanner() {
     }
   }, []);
 
+  useEffect(() => {
+    const handleReset = () => {
+      setShowCustomize(false);
+      setAnalytics(false);
+      setMarketing(false);
+      setVisible(true);
+    };
+    window.addEventListener('pomponette_reset_cookies', handleReset);
+    return () => window.removeEventListener('pomponette_reset_cookies', handleReset);
+  }, []);
+
   const handleAccept = () => {
-    localStorage.setItem(COOKIE_KEY, JSON.stringify({ analytics: true, marketing: true }));
+    saveConsent(true, true);
     setVisible(false);
   };
 
   const handleRefuse = () => {
-    localStorage.setItem(COOKIE_KEY, JSON.stringify({ analytics: false, marketing: false }));
+    saveConsent(false, false);
     setVisible(false);
   };
 
   const handleSaveCustom = () => {
-    localStorage.setItem(COOKIE_KEY, JSON.stringify({ analytics, marketing }));
+    saveConsent(analytics, marketing);
     setVisible(false);
   };
 

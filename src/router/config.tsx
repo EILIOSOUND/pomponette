@@ -4,6 +4,7 @@ import PourEllePage from '@/pages/pour-elle/page';
 import PourLuiPage from '@/pages/pour-lui/page';
 import ADeuxPage from '@/pages/a-deux/page';
 import GuideConseilsPage from '@/pages/guide-conseils/page';
+import ArticlePage from '@/pages/guide/page';
 import AProposPage from '@/pages/a-propos/page';
 import ContactPage from '@/pages/contact/page';
 import MentionsLegales from '@/pages/legal/MentionsLegales';
@@ -19,6 +20,7 @@ const routes: RouteObject[] = [
   { path: '/pour-lui', element: <PourLuiPage /> },
   { path: '/a-deux', element: <ADeuxPage /> },
   { path: '/guide-conseils', element: <GuideConseilsPage /> },
+  { path: '/guide/:slug', element: <ArticlePage /> },
   { path: '/a-propos', element: <AProposPage /> },
   { path: '/contact', element: <ContactPage /> },
   { path: '/mentions-legales', element: <MentionsLegales /> },

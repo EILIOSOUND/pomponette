@@ -24,7 +24,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* Affiliate badge */}
       <span className="absolute right-3 top-3 z-10 rounded-full bg-black/50 px-2 py-0.5 font-inter text-[9px] tracking-wide text-cream/70 backdrop-blur-sm">
-        Lovehoney
+        Espace Plaisir
       </span>
 
       {/* Image */}

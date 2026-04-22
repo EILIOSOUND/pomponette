@@ -1,34 +1,38 @@
 import { useState } from 'react';
 
-const NEWSLETTER_URL = 'https://readdy.ai/api/form/d7bd5c8mqd64j87imjc0';
+const BREVO_FUNCTION_URL = 'https://friqlmdjwwsglgdzvgfd.supabase.co/functions/v1/brevo-subscribe';
 
 export default function NewsletterSection() {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [gdpr, setGdpr] = useState(false);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !gdpr) return;
     setStatus('loading');
+    setErrorMsg('');
     try {
-      const body = new URLSearchParams({ email, ...(firstName && { firstName }) });
-      const res = await fetch(NEWSLETTER_URL, {
+      const res = await fetch(BREVO_FUNCTION_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, ...(firstName.trim() && { firstName: firstName.trim() }) }),
       });
-      if (res.ok) {
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) {
         setStatus('success');
         setFirstName('');
         setEmail('');
         setGdpr(false);
       } else {
         setStatus('error');
+        setErrorMsg(data.error || 'Une erreur est survenue. Veuillez réessayer.');
       }
     } catch {
       setStatus('error');
+      setErrorMsg('Une erreur est survenue. Veuillez réessayer.');
     }
   };
 
@@ -122,7 +126,7 @@ export default function NewsletterSection() {
 
             {status === 'error' && (
               <p className="font-inter text-xs text-red-400">
-                Une erreur est survenue. Veuillez réessayer.
+                {errorMsg || 'Une erreur est survenue. Veuillez réessayer.'}
               </p>
             )}
           </form>

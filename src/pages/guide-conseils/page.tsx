@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { articles } from '@/mocks/articles';
 import NewsletterSection from '@/components/base/NewsletterSection';
 
@@ -29,9 +30,12 @@ export default function GuideConseilsPage() {
                   <p className="mb-4 font-inter text-xs leading-relaxed text-dark-gray line-clamp-3">{article.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <span className="font-inter text-xs text-dark-gray/40">{article.date}</span>
-                    <span className="inline-flex items-center gap-1 font-inter text-xs text-gold cursor-pointer hover:gap-2 transition-all">
+                    <Link
+                      to={`/guide/${article.slug}`}
+                      className="inline-flex items-center gap-1 font-inter text-xs text-gold cursor-pointer hover:gap-2 transition-all"
+                    >
                       Lire <i className="ri-arrow-right-line" />
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </article>
