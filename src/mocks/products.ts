@@ -6,6 +6,7 @@ export interface Product {
   affiliateUrl: string;
   audience: string;
   category: string;
+  status: string; // 👈 obligatoire pour le build
 }
 
 export async function fetchProducts(): Promise<Product[]> {
@@ -28,7 +29,7 @@ export async function fetchProducts(): Promise<Product[]> {
       affiliateUrl: row.c[3]?.v || "",
 
       audience: row.c[9]?.v || "",   // Pour Elle / Pour Lui / À Deux
-      category: row.c[10]?.v || "",  // Vibromasseurs / etc
+      category: row.c[10]?.v || "",  // Vibromasseurs etc
 
       status: row.c[5]?.v || "",
     }))
