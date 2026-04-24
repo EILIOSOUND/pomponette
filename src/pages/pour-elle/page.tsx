@@ -15,17 +15,18 @@ export default function PourEllePage() {
     });
   }, []);
 
+  const normalize = (value: string = '') =>
+    value.toLowerCase().trim();
+
   const filteredProducts = products.filter((p) => {
     if (activeFilter === 'Tous') return true;
 
-    return (
-      p.sub_category &&
-      p.sub_category.toLowerCase().trim() === activeFilter.toLowerCase().trim()
-    );
+    return normalize(p.category) === normalize(activeFilter);
   });
 
   return (
     <main className="pt-20">
+      {/* Hero */}
       <section className="relative h-64 md:h-80 overflow-hidden">
         <img
           src="/images/723de039b442d9c98921105a49644b9d.jpg"
@@ -44,9 +45,10 @@ export default function PourEllePage() {
         </div>
       </section>
 
+      {/* Products */}
       <section className="bg-cream py-20 px-6 md:px-12">
         <div className="mx-auto max-w-7xl">
-
+          {/* Header + filters */}
           <div className="mb-10">
             <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -58,6 +60,7 @@ export default function PourEllePage() {
               </span>
             </div>
 
+            {/* Sub-category pills */}
             <div className="flex flex-wrap gap-2">
               {subCategories.map((cat) => (
                 <button
@@ -79,9 +82,7 @@ export default function PourEllePage() {
 
           <p className="mt-12 text-center font-inter text-[11px] text-black/35">
             * En tant que partenaire affilié Espace Plaisir via Kwanko, nous percevons une commission sur les ventes réalisées via nos liens.{' '}
-            <a href="/divulgation-affiliation" className="text-gold underline hover:text-gold/70">
-              En savoir plus
-            </a>
+            <a href="/divulgation-affiliation" className="text-gold underline hover:text-gold/70">En savoir plus</a>
           </p>
         </div>
       </section>
