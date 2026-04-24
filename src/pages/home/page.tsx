@@ -1,19 +1,31 @@
+import { useEffect, useState } from 'react';
 import HeroSection from './components/HeroSection';
 import CategorySection from './components/CategorySection';
 import ReassuranceSection from './components/ReassuranceSection';
 import ProductCard from '@/components/base/ProductCard';
 import NewsletterSection from '@/components/base/NewsletterSection';
-import { featuredProducts } from '@/mocks/products';
+import { fetchProducts, Product } from '@/mocks/products';
 import { articles } from '@/mocks/articles';
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetchProducts()
+      .then(setProducts)
+      .catch((error) => {
+        console.error('Erreur chargement produits Google Sheet:', error);
+      });
+  }, []);
+
+  const featuredProducts = products.slice(0, 4);
+
   return (
     <main>
       <HeroSection />
       <CategorySection />
 
-      {/* Featured Products */}
       <section className="bg-black py-28 px-6 md:px-12">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-center">
@@ -23,11 +35,13 @@ export default function HomePage() {
             <h2 className="font-playfair text-4xl font-semibold text-cream md:text-5xl">Nos coups de cœur</h2>
             <div className="mx-auto mt-5 h-px w-14 bg-gold/40" />
           </div>
+
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4" data-product-shop>
             {featuredProducts.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
+
           <div className="mt-14 text-center">
             <Link
               to="/pour-elle"
@@ -41,7 +55,6 @@ export default function HomePage() {
 
       <ReassuranceSection />
 
-      {/* Guide preview */}
       <section className="bg-cream py-28 px-6 md:px-12">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-center">
@@ -51,6 +64,7 @@ export default function HomePage() {
             <h2 className="font-playfair text-4xl font-semibold text-black md:text-5xl">Nos Conseils Bien-Être</h2>
             <div className="mx-auto mt-5 h-px w-14 bg-gold/40" />
           </div>
+
           <div className="grid grid-cols-1 gap-7 md:grid-cols-3">
             {articles.slice(0, 3).map((article) => (
               <article
@@ -68,17 +82,21 @@ export default function HomePage() {
                     {article.category}
                   </span>
                 </div>
+
                 <div className="p-6">
                   <div className="mb-3 flex items-center gap-2">
                     <span className="font-inter text-[11px] text-black/35">{article.readTime}</span>
                     <span className="h-px flex-1 bg-black/8" />
                   </div>
+
                   <h3 className="mb-2.5 font-playfair text-[17px] font-semibold leading-snug text-black line-clamp-2 tracking-tight">
                     {article.title}
                   </h3>
+
                   <p className="mb-5 font-inter text-[12px] leading-relaxed text-black/45 line-clamp-3">
                     {article.excerpt}
                   </p>
+
                   <Link
                     to={`/guide/${article.slug}`}
                     className="inline-flex items-center gap-1.5 font-inter text-[11px] tracking-widest text-gold uppercase transition-all duration-300 hover:gap-2.5 cursor-pointer"
@@ -90,6 +108,7 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+
           <div className="mt-14 text-center">
             <Link
               to="/guide-conseils"
