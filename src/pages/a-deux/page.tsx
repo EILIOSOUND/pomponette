@@ -19,8 +19,8 @@ export default function ADeuxPage() {
     value.toLowerCase().trim();
 
   const filteredProducts = products.filter((p) => {
-    // ✅ FIX : filtre audience
-    if (normalize(p.audience) !== 'deux') return false;
+    // ✅ CORRECTION
+    if (normalize(p.audience) !== normalize('À Deux')) return false;
 
     if (activeFilter === 'Tous') return true;
 
