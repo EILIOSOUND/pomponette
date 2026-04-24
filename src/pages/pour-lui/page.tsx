@@ -1,12 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProductCard from '@/components/base/ProductCard';
 import NewsletterSection from '@/components/base/NewsletterSection';
-import { productsLui } from '@/mocks/products';
+import { fetchProducts } from '@/mocks/products';
 
 const subCategories = ['Tous', 'Masturbateurs', 'Cockrings', 'Prostate', 'Accessoires'];
 
 export default function PourLuiPage() {
   const [activeFilter, setActiveFilter] = useState('Tous');
+  const [products, setProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetchProducts().then((data) => {
+      setProducts(data);
+    });
+  }, []);
+
+  const normalize = (value: string = '') =>
+    value.toLowerCase().trim();
+
+  const filteredProducts = products.filter((p) => {
+    if (activeFilter === 'Tous') return true;
+
+    return normalize(p.category) === normalize(activeFilter);
+  });
 
   return (
     <main className="pt-20">
@@ -36,10 +52,11 @@ export default function PourLuiPage() {
                 <h2 className="font-playfair text-2xl font-semibold text-black">Notre sélection</h2>
                 <div className="mt-2 h-px w-10 bg-gold/40" />
               </div>
-              <span className="font-inter text-[12px] text-black/40">{productsLui.length} produits</span>
+              <span className="font-inter text-[12px] text-black/40">
+                {filteredProducts.length} produits
+              </span>
             </div>
 
-            {/* Sub-category pills */}
             <div className="flex flex-wrap gap-2">
               {subCategories.map((cat) => (
                 <button
@@ -54,7 +71,7 @@ export default function PourLuiPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4" data-product-shop>
-            {productsLui.map((p) => (
+            {filteredProducts.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
