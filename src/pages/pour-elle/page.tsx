@@ -1,12 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProductCard from '@/components/base/ProductCard';
 import NewsletterSection from '@/components/base/NewsletterSection';
-import { productsElle } from '@/mocks/products';
+import { fetchProducts } from '@/mocks/products';
 
 const subCategories = ['Tous', 'Vibromasseurs', 'Stimulateurs', 'Lingerie', 'Huiles'];
 
 export default function PourEllePage() {
   const [activeFilter, setActiveFilter] = useState('Tous');
+  const [products, setProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetchProducts().then((data) => {
+      setProducts(data);
+    });
+  }, []);
+
+  // filtre dynamique (SANS supposition côté audience)
+  const filteredProducts = products.filter((p) => {
+    if (activeFilter === 'Tous') return true;
+    return p.sub_category === activeFilter;
+  });
 
   return (
     <main className="pt-20">
@@ -39,7 +52,7 @@ export default function PourEllePage() {
                 <h2 className="font-playfair text-2xl font-semibold text-black">Notre sélection</h2>
                 <div className="mt-2 h-px w-10 bg-gold/40" />
               </div>
-              <span className="font-inter text-[12px] text-black/40">{productsElle.length} produits</span>
+              <span className="font-inter text-[12px] text-black/40">{filteredProducts.length} produits</span>
             </div>
 
             {/* Sub-category pills */}
@@ -57,7 +70,7 @@ export default function PourEllePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4" data-product-shop>
-            {productsElle.map((p) => (
+            {filteredProducts.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
           </div>
