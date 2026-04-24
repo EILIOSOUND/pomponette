@@ -6,7 +6,7 @@ export interface Product {
   affiliateUrl: string;
   audience: string;
   category: string;
-  status: string; // 👈 obligatoire pour le build
+  status: string;
 }
 
 export async function fetchProducts(): Promise<Product[]> {
@@ -22,18 +22,22 @@ export async function fetchProducts(): Promise<Product[]> {
   const products = rows
     .map((row: any, index: number) => ({
       id: String(row.c[0]?.v || index),
-
       title: row.c[7]?.v || "",
       description: row.c[6]?.v || "",
       image: row.c[8]?.v || "",
       affiliateUrl: row.c[3]?.v || "",
-
-      audience: row.c[9]?.v || "",   // Pour Elle / Pour Lui / À Deux
-      category: row.c[10]?.v || "",  // Vibromasseurs etc
-
+      audience: row.c[9]?.v || "",
+      category: row.c[10]?.v || "",
       status: row.c[5]?.v || "",
     }))
     .filter((p: any) => p.status === "active");
 
   return products;
 }
+
+// 👇 AJOUT POUR NE PAS CASSER TON SITE
+
+export const productsElle: Product[] = [];
+export const productsLui: Product[] = [];
+export const productsDeux: Product[] = [];
+export const featuredProducts: Product[] = [];
