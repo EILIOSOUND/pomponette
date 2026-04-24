@@ -19,6 +19,9 @@ export default function PourLuiPage() {
     value.toLowerCase().trim();
 
   const filteredProducts = products.filter((p) => {
+    // ✅ FIX : filtre audience
+    if (normalize(p.audience) !== 'homme') return false;
+
     if (activeFilter === 'Tous') return true;
 
     return normalize(p.category) === normalize(activeFilter);
