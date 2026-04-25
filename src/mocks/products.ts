@@ -7,6 +7,8 @@ export interface Product {
   audience: string;
   category: string;
   status: string;
+  images: string[];
+  badge?: string;
 }
 
 export async function fetchProducts(): Promise<Product[]> {
@@ -26,16 +28,20 @@ export async function fetchProducts(): Promise<Product[]> {
       description: row.c[6]?.v || "",
       image: row.c[8]?.v || "",
       affiliateUrl: row.c[3]?.v || "",
-      audience: row.c[9]?.v || "",
-      category: row.c[10]?.v || "",
       status: row.c[5]?.v || "",
+
+      // ✅ CORRIGÉ (colonnes décalées)
+      images: row.c[9]?.v?.split(",") || [row.c[8]?.v],
+      badge: row.c[10]?.v || undefined,
+      audience: row.c[11]?.v || "",
+      category: row.c[12]?.v || "",
     }))
     .filter((p: any) => p.status === "active");
 
   return products;
 }
 
-// 👇 AJOUT POUR NE PAS CASSER TON SITE
+// POUR NE PAS CASSER TON SITE
 
 export const productsElle: Product[] = [];
 export const productsLui: Product[] = [];
